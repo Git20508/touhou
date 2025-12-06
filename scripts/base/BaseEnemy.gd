@@ -13,19 +13,28 @@ func _init_entity() -> void:
 	add_to_group("enemies")
 
 # 受击逻辑
+# res://scripts/base/BaseEnemy.gd
+
 func take_damage(damage: int) -> void:
-	if not is_alive: return
+	if not is_alive: 
+		return
 	
+	# --- 诊断代码 START ---
+	var old_hp = current_hp
 	current_hp -= damage
-	# 这里可以加个受击闪白效果
-	modulate = Color(10, 10, 10) # 瞬间变亮
+	print()
+	# --- 诊断代码 END ---
+
+	modulate = Color(10, 10, 10)
 	var tween = create_tween()
-	tween.tween_property(self, "modulate", Color.WHITE, 0.1) # 0.1秒变回来
+	tween.tween_property(self, "modulate", Color.WHITE, 0.1)
 	
 	if current_hp <= 0:
+		print()
 		_on_death()
 
 # 死亡逻辑
 func _on_death() -> void:
 	# 以后这里会生成爆炸特效、掉落道具
 	change_state(State.DESTROYED)
+	queue_free()

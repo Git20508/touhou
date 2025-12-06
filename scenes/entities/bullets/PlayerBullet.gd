@@ -3,8 +3,9 @@ extends BaseBullet
 
 func _init_entity() -> void:
 	hitbox_radius = 5.0
-	damage = 2 # 设置伤害
+	damage = 2
 	velocity = Vector2(0, -900)
+	print()
 
 # 重写物理更新，加入碰撞检测
 func _physics_update(delta: float) -> void:
