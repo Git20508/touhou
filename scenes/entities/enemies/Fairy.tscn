@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7id5kc77jjq6"]
+
+[ext_resource type="Script" uid="uid://beh7p0bwcvtio" path="res://scenes/entities/enemies/Fairy.gd" id="1_yqyk7"]
+[ext_resource type="Texture2D" uid="uid://ou8airyc7h8o" path="res://icon.svg" id="2_ntogk"]
+
+[node name="Fairy" type="Node2D"]
+script = ExtResource("1_yqyk7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.89309645, 0, 0.17701256, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ntogk")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvegqa8gajbs3"]
+
+[ext_resource type="Script" uid="uid://bbtji1aulunj7" path="res://scenes/entities/player/player.gd" id="1_tlaso"]
+[ext_resource type="Texture2D" uid="uid://ou8airyc7h8o" path="res://icon.svg" id="2_afppm"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_tlaso")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_afppm")
+
+[node name="HitboxVisual" type="ColorRect" parent="."]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0

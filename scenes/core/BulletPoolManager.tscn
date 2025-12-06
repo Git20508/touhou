@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://22tfvc634unk"]
+
+[ext_resource type="Script" uid="uid://bh5nsssxjvakr" path="res://scenes/core/BulletPoolManager.gd" id="1_ylvrt"]
+
+[node name="BulletPoolManager" type="Node2D"]
+script = ExtResource("1_ylvrt")

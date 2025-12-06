@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://djqoee1wdkurt"]
+
+[ext_resource type="Script" uid="uid://crilwr1upanm5" path="res://scenes/entities/bullets/PlayerBullet.gd" id="1_buc7h"]
+[ext_resource type="Texture2D" uid="uid://ou8airyc7h8o" path="res://icon.svg" id="2_h46o6"]
+
+[node name="PlayerBullet" type="Node2D"]
+script = ExtResource("1_buc7h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("2_h46o6")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

@@ -1,0 +1,24 @@
+# Godot 通用忽略规则
+# 缓存/导入文件
+.import/
+# 编译后的二进制文件
+*.import
+# 临时文件
+*.tmp
+*.swp
+*.swo
+# Godot 4 编辑器状态
+.editorconfig
+.godot/
+# 导出的构建文件
+exported/
+build/
+# 日志文件
+*.log
+# Windows 系统文件
+Thumbs.db
+.DS_Store
+desktop.ini
+# IDE/编辑器配置（如 VS Code）
+.vscode/
+.idea/
