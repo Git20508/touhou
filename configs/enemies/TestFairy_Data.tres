@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="EnemyConfig" load_steps=4 format=3 uid="uid://c2dlokmp3fbc0"]
+[gd_resource type="Resource" script_class="EnemyConfig" load_steps=6 format=3 uid="uid://c2dlokmp3fbc0"]
 
 [ext_resource type="Script" uid="uid://diersa6qj84lp" path="res://scripts/resource/EnemyConfig.gd" id="1_gcchi"]
+[ext_resource type="Script" uid="uid://cmodtacn0ft15" path="res://scripts/controllers/attack/AimedAttackController.gd" id="1_lh3um"]
 [ext_resource type="Script" uid="uid://biqany8wl7qeg" path="res://scripts/controllers/movement/SineMoveController.gd" id="1_noqf6"]
+[ext_resource type="PackedScene" uid="uid://b5xn7exdnwqy4" path="res://scripts/entities/bullets/EnemyBullet.tscn" id="2_nghhx"]
 [ext_resource type="Texture2D" uid="uid://ou8airyc7h8o" path="res://icon.svg" id="3_lh3um"]
 
 [resource]
@@ -11,4 +13,6 @@ score_value = 500
 hitbox_radius = 20.0
 texture = ExtResource("3_lh3um")
 movement_script = ExtResource("1_noqf6")
+attack_script = ExtResource("1_lh3um")
+bullet_scene = ExtResource("2_nghhx")
 metadata/_custom_type_script = "uid://diersa6qj84lp"

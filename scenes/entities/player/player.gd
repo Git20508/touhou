@@ -1,4 +1,4 @@
-extends BaseEntity
+extends BasePlayer
 
 # --- 变量定义区 ---
 @export var high_speed: float = 400.0
@@ -18,12 +18,14 @@ var viewport_rect: Rect2
 
 # --- 初始化 ---
 func _init_entity() -> void:
-	hitbox_radius = 2.0
-	viewport_rect = get_viewport_rect()
+	super._init_entity() # 这一步很重要！父类里设置了 hitbox=2.0 和 group="player"
 	
+	viewport_rect = get_viewport_rect()
 	if hitbox_visual:
 		hitbox_visual.visible = false
-
+	
+	# 初始出生时也给一点无敌时间，防止骑脸死
+	_start_invincibility()
 # 注册自己到全局管理器
 func _ready() -> void:
 	super._ready() # 必须调用父类的 ready

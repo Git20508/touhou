@@ -9,7 +9,7 @@ var current_state: State = State.IDLE
 # 注意：以后这些属性尽量从 Config 里读，但为了兼容，保留默认值
 @export var hitbox_radius: float = 4.0 
 @export var is_alive: bool = true
-
+@export var is_invincible: bool = false
 # --- 架构核心：控制器容器 ---
 # 存储所有挂载的控制器，key=名字(如"movement"), value=控制器实例
 var controllers: Dictionary = {}

@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfnqm3d36pkv1"]
+[gd_scene load_steps=5 format=3 uid="uid://dfnqm3d36pkv1"]
 
 [ext_resource type="PackedScene" uid="uid://bvegqa8gajbs3" path="res://scenes/entities/player/Player.tscn" id="1_h81hb"]
 [ext_resource type="PackedScene" uid="uid://22tfvc634unk" path="res://scenes/core/BulletPoolManager.tscn" id="2_fk73p"]
 [ext_resource type="PackedScene" uid="uid://b7id5kc77jjq6" path="res://scenes/entities/enemies/Fairy.tscn" id="3_c7piu"]
 [ext_resource type="PackedScene" uid="uid://1qshra4kja0c" path="res://scenes/entities/enemies/TestEnemy.tscn" id="4_p54j3"]
-[ext_resource type="Resource" uid="uid://c2dlokmp3fbc0" path="res://configs/enemies/TestFairy_Data.tres" id="5_ktsdh"]
 
 [node name="Maintest" type="Node2D"]
 position = Vector2(663, 856)
@@ -27,4 +26,3 @@ position = Vector2(490, -783)
 
 [node name="TestEnemy" parent="." instance=ExtResource("4_p54j3")]
 position = Vector2(-404, -676)
-config = ExtResource("5_ktsdh")
