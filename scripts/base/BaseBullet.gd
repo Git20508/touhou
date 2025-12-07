@@ -11,7 +11,9 @@ var despawn_margin: float = 50.0
 func _init_entity() -> void:
 	# 子弹默认也是圆的
 	hitbox_radius = 4.0
-
+	add_to_group("bullets")
+	can_be_grazed = true
+	graze_radius = 8.0
 func _physics_update(delta: float) -> void:
 	# 移动
 	global_position += velocity * delta

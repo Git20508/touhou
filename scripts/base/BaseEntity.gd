@@ -4,7 +4,13 @@ class_name BaseEntity extends Node2D
 # --- 状态定义 ---
 enum State { IDLE, ACTIVE, HIT, DESTROYED }
 var current_state: State = State.IDLE
-
+# --- 扩展属性：擦弹系统 ---
+## 擦弹半径 (通常比碰撞半径大得多)
+@export var graze_radius: float = 12.0 
+## 该实体是否可以被擦弹 (如子弹为true，玩家为false)
+@export var can_be_grazed: bool = false
+## 是否已经被擦过 (防止一颗子弹无限刷分)
+var _has_been_grazed: bool = false
 # --- 核心属性 ---
 # 注意：以后这些属性尽量从 Config 里读，但为了兼容，保留默认值
 @export var hitbox_radius: float = 4.0 
@@ -87,3 +93,30 @@ func _draw() -> void:
 	if OS.has_feature("editor"):
 		draw_circle(Vector2.ZERO, hitbox_radius, Color(1, 0, 0, 0.5))
 		draw_circle(Vector2.ZERO, 1.0, Color.WHITE)
+# --- 扩展方法：擦弹检测 ---
+## 检测是否可以被目标实体擦弹
+## other: 通常是玩家
+func check_graze(other: BaseEntity) -> bool:
+	# 基础条件检查：
+	# 1. 自己必须活着
+	# 2. 对方必须活着
+	# 3. 自己必须允许被擦弹
+	# 4. 自己还没被这轮擦过
+	if not is_alive or not other.is_alive: return false
+	if not can_be_grazed or _has_been_grazed: return false
+	
+	# 计算擦弹距离 (两者擦弹半径之和)
+	var r = graze_radius + other.graze_radius
+	var dist_sq = global_position.distance_squared_to(other.global_position)
+	
+	if dist_sq <= r * r:
+		_on_grazed()
+		return true
+	
+	return false
+
+## 当由于被擦弹触发的回调
+func _on_grazed() -> void:
+	_has_been_grazed = true
+	# 这里可以播放擦弹音效，或者生成擦弹特效（小白圈）
+	# print("Graze!")

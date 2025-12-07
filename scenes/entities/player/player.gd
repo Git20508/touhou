@@ -26,6 +26,7 @@ func _init_entity() -> void:
 	
 	# 初始出生时也给一点无敌时间，防止骑脸死
 	_start_invincibility()
+	
 # 注册自己到全局管理器
 func _ready() -> void:
 	super._ready() # 必须调用父类的 ready

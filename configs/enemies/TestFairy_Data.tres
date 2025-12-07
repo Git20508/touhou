@@ -10,9 +10,10 @@
 script = ExtResource("1_gcchi")
 max_hp = 20
 score_value = 500
-hitbox_radius = 20.0
+hitbox_radius = 50.0
 texture = ExtResource("3_lh3um")
 movement_script = ExtResource("1_noqf6")
 attack_script = ExtResource("1_lh3um")
 bullet_scene = ExtResource("2_nghhx")
+drop_power = 16
 metadata/_custom_type_script = "uid://diersa6qj84lp"
