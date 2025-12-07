@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfnqm3d36pkv1"]
+[gd_scene load_steps=5 format=3 uid="uid://dfnqm3d36pkv1"]
 
 [ext_resource type="PackedScene" uid="uid://bvegqa8gajbs3" path="res://scenes/entities/player/Player.tscn" id="1_h81hb"]
 [ext_resource type="PackedScene" uid="uid://22tfvc634unk" path="res://scenes/core/BulletPoolManager.tscn" id="2_fk73p"]
+[ext_resource type="PackedScene" uid="uid://bp2ftn6s7u24w" path="res://scenes/ui/PauseMenu.tscn" id="4_ejmri"]
 [ext_resource type="PackedScene" uid="uid://1qshra4kja0c" path="res://scenes/entities/enemies/TestEnemy.tscn" id="4_p54j3"]
 
 [node name="Maintest" type="Node2D"]
@@ -13,3 +14,6 @@ position = Vector2(618, 877)
 
 [node name="TestEnemy" parent="." instance=ExtResource("4_p54j3")]
 position = Vector2(625, -90)
+
+[node name="PauseMenu" parent="." instance=ExtResource("4_ejmri")]
+process_mode = 3
